@@ -1,10 +1,8 @@
 # Colorize the prompt.
-yellow=$(tput setaf 3)
-green=$(tput setaf 2)
-Blue=$(tput setaf 4)
-bold=$(tput bold)
-reset=$(tput sgr0)
-purple=$(tput setaf 30)
+yellow="$(tput setaf 3)"
+green="$(tput setaf 2)"
+bold="$(tput bold)"
+reset="$(tput sgr0)"
 Cyan="$(tput setaf 6)"
 
 alias ls='ls --color=auto'
