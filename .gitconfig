@@ -1,0 +1,15 @@
+[user]
+        name = staracg
+        email = staracg@gmail.com
+[merge]
+    ff = no
+[alias]
+        st = status
+        co = checkout
+        br = branch
+        up = rebase
+        cm = commit
+[core]
+        editor = vim
+[color]
+        ui = true
