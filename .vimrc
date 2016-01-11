@@ -47,6 +47,9 @@ Bundle 'tomtom/tcomment_vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'honza/vim-snippets'
 Bundle 'garbas/vim-snipmate'
+Bundle 'FuzzyFinder'
+Bundle 'L9'
+Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 
 "Press F1 to open NERDTree
 map <F1> :NERDTreeToggle<CR>
