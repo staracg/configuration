@@ -47,9 +47,10 @@ Bundle 'tomtom/tcomment_vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'honza/vim-snippets'
 Bundle 'garbas/vim-snipmate'
-Bundle 'FuzzyFinder'
-Bundle 'L9'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+Bundle 'L9'
+Bundle 'FuzzyFinder'
+
 
 "Press F1 to open NERDTree
 map <F1> :NERDTreeToggle<CR>
@@ -88,5 +89,3 @@ set bs=2                     "open the backspace""
 set t_Co=256
 set showmatch                " Cursor shows matching ) and }
 set showmode                 " Show current mode  "
-highlight Comment ctermfg=blue
-
