@@ -48,6 +48,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'honza/vim-snippets'
 Bundle 'garbas/vim-snipmate'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+Bundle 'klen/python-mode'
 Bundle 'L9'
 Bundle 'FuzzyFinder'
 
