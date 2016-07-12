@@ -56,6 +56,9 @@ Bundle 'matchit.zip'
 Bundle 'molokai'
 Bundle 'syntastic'
 Bundel 'vim-isort'
+Bundel 'Ayumi'
+Bundle 'Tagbar'
+Bundle 'tesla'
 
 
 "Press F1 to open NERDTree
