@@ -51,6 +51,11 @@ Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'klen/python-mode'
 Bundle 'L9'
 Bundle 'FuzzyFinder'
+Bundle 'IndexedSearch'
+Bundle 'matchit.zip'
+Bundle 'molokai'
+Bundle 'syntastic'
+Bundel 'vim-isort'
 
 
 "Press F1 to open NERDTree
