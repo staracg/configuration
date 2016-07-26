@@ -38,7 +38,6 @@ Bundle 'airblade/vim-gitgutter'
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 Bundle 'Townk/vim-autoclose'
-Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdtree'
 let NERDTreeMinimalUI=1
 let NERDTreeWinSize=25
@@ -48,17 +47,14 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'honza/vim-snippets'
 Bundle 'garbas/vim-snipmate'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-Bundle 'klen/python-mode'
 Bundle 'L9'
 Bundle 'FuzzyFinder'
 Bundle 'IndexedSearch'
-Bundle 'matchit.zip'
-Bundle 'molokai'
 Bundle 'syntastic'
-Bundel 'vim-isort'
-Bundel 'Ayumi'
 Bundle 'Tagbar'
-Bundle 'tesla'
+Plugin 'Auto-debug-your-vim'  
+Bundle 'Valloric/YouCompleteMe'
+
 
 
 "Press F1 to open NERDTree
