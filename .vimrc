@@ -1,15 +1,6 @@
-" Vundle
-" Configuration file for vim
-set modelines=0		" CVE-2007-2438
-set backspace=2		" more powerful backspacing
-set nocompatible  " not compatible with the old-fashion vi mode
-filetype off      " required!
-
-" powerline
-set rtp+=usr/local/lib/python2.7/dist-packages/powerline/bindings/vim
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
+" ============================================================================
+" Vim-plug initialization
+" Avoid modify this section, unless you are very sure of what you are doing
 
 let vim_plug_just_installed = 0
 let vim_plug_path = expand('~/.vim/autoload/plug.vim')
@@ -38,114 +29,63 @@ call plug#begin('~/.vim/plugged')
 
 " Plugins from github repos:
 
-" Override configs by directory 
-Plug 'arielrossanigo/dir-configs-override.vim'
-" Better file browser
-Plug 'scrooloose/nerdtree'
-" Code commenter
-Plug 'scrooloose/nerdcommenter'
-" Class/module browser
-Plug 'majutsushi/tagbar'
-" Code and files fuzzy finder
-Plug 'ctrlpvim/ctrlp.vim'
-" Extension to ctrlp, for fuzzy command finder
-Plug 'fisadev/vim-ctrlp-cmdpalette'
-" Zen coding
-Plug 'mattn/emmet-vim'
-" Git integration
-Plug 'motemen/git-vim'
-" Tab list panel
-Plug 'kien/tabman.vim'
-" Airline
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-" Terminal Vim with 256 colors colorscheme
-Plug 'fisadev/fisa-vim-colorscheme'
-" Consoles as buffers
-Plug 'rosenfeld/conque-term'
-" Pending tasks list
-Plug 'fisadev/FixedTaskList.vim'
-" Surround
-Plug 'tpope/vim-surround'
-" Autoclose
-Plug 'Townk/vim-autoclose'
-" Indent text object
-Plug 'michaeljsmith/vim-indent-object'
-" Indentation based movements
-Plug 'jeetsukumaran/vim-indentwise'
+Plug 'arielrossanigo/dir-configs-override.vim'  " Override configs by directory 
+Plug 'scrooloose/nerdtree'                      " Better file browser
+Plug 'scrooloose/nerdcommenter'                 " Code commenter
+Plug 'majutsushi/tagbar'                        " Class/module browser
+Plug 'ctrlpvim/ctrlp.vim'                       " Code and files fuzzy finder
+Plug 'fisadev/vim-ctrlp-cmdpalette'             " Extension to ctrlp, for fuzzy command finder
+Plug 'mattn/emmet-vim'                          " Zen coding
+Plug 'motemen/git-vim'                          " Git integration
+Plug 'kien/tabman.vim'                          " Tab list panel
+Plug 'fisadev/fisa-vim-colorscheme'             " Terminal Vim with 256 colors colorscheme
+Plug 'rosenfeld/conque-term'                    " Consoles as buffers
+Plug 'fisadev/FixedTaskList.vim'                " Pending tasks list
+Plug 'tpope/vim-surround'                       " Surround
+Plug 'Townk/vim-autoclose'                      " Autoclose
+Plug 'michaeljsmith/vim-indent-object'          " Indent text object
+Plug 'jeetsukumaran/vim-indentwise'             " Indentation based movements
+Plug 'Shougo/neocomplcache.vim'                 " Better autocompletion
+Plug 'fisadev/vim-isort'                        " Automatically sort python imports
+Plug 'mhinz/vim-signify'                        " Git/mercurial/others diff icons on the side of the file lines
+Plug 'fisadev/dragvisuals.vim'                  " Drag visual blocks arround
+Plug 't9md/vim-choosewin'                       " Window chooser
+Plug 'scrooloose/syntastic'                     " Python and other languages code checker
+Plug 'lilydjwg/colorizer'                       " Paint css colors with the real color
+Plug 'IndexedSearch'                            " Search results counter
+Plug 'matchit.zip'                              " XML/HTML tags navigation
+Plug 'Wombat'                                   " Gvim colorscheme
+Plug 'YankRing.vim'                             " Yank history navigation
+
 " Python mode (indentation, doc, refactor, lints, code checking, motion and
 " operators, highlighting, run and ipdb breakpoints)
 Plug 'klen/python-mode'
-" Better autocompletion
-Plug 'Shougo/neocomplcache.vim'
+
+" Airline
+Plug 'vim-airline/vim-airline'  
+Plug 'vim-airline/vim-airline-themes'
+
 " Snippets manager (SnipMate), dependencies, and snippets repo
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'honza/vim-snippets'
 Plug 'garbas/vim-snipmate'
-" Git/mercurial/others diff icons on the side of the file lines
-Plug 'mhinz/vim-signify'
-" Automatically sort python imports
-Plug 'fisadev/vim-isort'
-" Drag visual blocks arround
-Plug 'fisadev/dragvisuals.vim'
-" Window chooser
-Plug 't9md/vim-choosewin'
-" Python and other languages code checker
-Plug 'scrooloose/syntastic'
-" Paint css colors with the real color
-Plug 'lilydjwg/colorizer'
+
 " Ack code search (requires ack installed in the system)
 Plug 'mileszs/ack.vim'
 if has('python')
     " YAPF formatter for Python
     Plug 'pignacio/vim-yapf-format'
 endif
-" Relative numbering of lines (0 is the current line)
-" (disabled by default because is very intrusive and can't be easily toggled
-" on/off. When the plugin is present, will always activate the relative 
-" numbering every time you go to normal mode. Author refuses to add a setting 
-" to avoid that)
-" Plug 'myusuf3/numbers.vim'
-
-" Plugins from vim-scripts repos:
-
-" Search results counter
-Plug 'IndexedSearch'
-" XML/HTML tags navigation
-Plug 'matchit.zip'
-" Gvim colorscheme
-Plug 'Wombat'
-" Yank history navigation
-Plug 'YankRing.vim'
-
-Plug 'Auto-debug-your-vim'  
 
 
-" Tell vim-plug we finished declaring plugins, so it can load them
 call plug#end()
 
-" ============================================================================
-" Install plugins the first time vim runs
 
-if vim_plug_just_installed
-    echo "Installing Bundles, please ignore key map error messages"
-    :PlugInstall
-endif
-
-" ============================================================================
-" Vim settings and mappings
-" You can edit them as you wish
-
-" no vi-compatible
-set nocompatible
-
-" allow plugins by file type (required for plugins!)
-filetype plugin on
-filetype indent on
-
+"=============================================================================
 " http://www.erikzaadi.com/2012/03/19/auto-installing-vundle-from-your-vimrc/
 " Setting up Vundle - the vim plugin bundler
+
 let iCanHazVundle=1
 let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
 if !filereadable(vundle_readme)
@@ -163,53 +103,56 @@ call vundle#rc()
 " required!
 Bundle 'gmarik/vundle'
 
-" My Bundles here:"
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tomtom/tcomment_vim'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'L9'
-Bundle 'FuzzyFinder'
 Bundle 'Valloric/YouCompleteMe'
+
+
+" ============================================================================
+" Vim settings and mappings
+" You can edit them as you wish
+
+
+" Configuration file for vim
+set modelines=0     " CVE-2007-2438
+set backspace=2     " more powerful backspacing
+set nocompatible    " not compatible with the old-fashion vi mode
+set autoindent      " enable autoindent
+set nocompatible    " no vi-compatible
+
+" allow plugins by file type (required for plugins!)
+filetype plugin on
+filetype indent on
+
+" general
+set wildmenu
+set smarttab
+set showmatch       " Cursor shows matching ) and }
+set showmode        " Show current mode  "
+set cursorline      " cursorline highlighting
+set expandtab
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set nu              " show line numbers
+set ru              " ruler
+set laststatus=2 
+set ls=2            " always show status bar
+set incsearch       " incremental search
+set hlsearch        " highlighted search results
+set autoread        " auto read when file is changed from outside "
+set history=1000    " keep 50 lines of command line history  "
+set scrolloff=3     " when scrolling, keep cursor 3 lines away from screen border
+syntax on           " syntax highlight on
 
 
 "Youcompleteme fix
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 
-           
-"map vim record mode to none
-map q <Nop>
-scriptencoding utf-8
-set encoding=utf-8    
-set langmenu=en_US.UTF-8
-language message en_US.UTF-8
-
-" Don't write backup file if vim is being called by "crontab -e"
-au BufWrite /private/tmp/crontab.* set nowritebackup nobackup
-" Don't write backup file if vim is being called by "chpass"
-au BufWrite /private/etc/pw.* set nowritebackup nobackup
-
-" General
-set autoindent               " enable autoindent
-set autoread                 " auto read when file is changed from outside "
-set expandtab                " use space instead of tab  "
-set history=1000             " keep 50 lines of command line history  "
-set nu                       "set line number
-set ru                       "ruler
-syntax on                    "syntax highlighting 
-set cursorline               "cursorline highlighting
-set scrolloff=5              "the minimal screen line above/below the cursor
-set laststatus=2             "狀態列
-set clipboard=unnamed        " yank to the system register (*) by default"
-set wildmenu
-set smarttab
-set tabstop=4                "tab=4space
-set shiftwidth=4             ">>,<< for 4space"
-set bs=2                     "open the backspace"" 
-set showmatch                " Cursor shows matching ) and }
-set showmode                 " Show current mode  "
+" tab length exceptions on some file types
+autocmd FileType html setlocal shiftwidth=4 tabstop=4 softtabstop=4
+autocmd FileType htmldjango setlocal shiftwidth=4 tabstop=4 softtabstop=4
+autocmd FileType javascript setlocal shiftwidth=4 tabstop=4 softtabstop=4
 
 " tab navigation mappings
 map tn :tabn<CR>
@@ -260,9 +203,6 @@ if has('gui_running')
     colorscheme wombat
 endif
 
-" when scrolling, keep cursor 3 lines away from screen border
-set scrolloff=3
-
 " autocompletion of files and commands behaves like shell
 " (complete only the common part, list the options that match)
 set wildmode=list:longest
@@ -302,20 +242,17 @@ let g:tagbar_autofocus = 1
 " NERDTree ----------------------------- 
 
 " toggle nerdtree display
-map <F1> :NERDTreeToggle<CR>
+map <F3> :NERDTreeToggle<CR>
 " open nerdtree with the current file selected
 nmap ,t :NERDTreeFind<CR>
 " don;t show these file types
 let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
-call vundle#end()            " required
-filetype plugin indent on    " required
 
 
 " Tasklist ------------------------------
 
 " show pending tasks list
 map <F2> :TaskList<CR>
-
 
 " CtrlP ------------------------------
 
@@ -373,26 +310,7 @@ let g:syntastic_enable_signs = 0
 let g:pymode_lint_on_write = 0
 let g:pymode_lint_signs = 0
 " don't fold python code on open
-let g:pymode_folding = 0
-" don't load rope by default. Change to 1 to use rope
-let g:pymode_rope = 0
-" open definitions on same window, and custom mappings for definitions and
-" occurrences
-let g:pymode_rope_goto_definition_bind = ',d'
-let g:pymode_rope_goto_definition_cmd = 'e'
-nmap ,D :tab split<CR>:PymodePython rope.goto()<CR>
-nmap ,o :RopeFindOccurrences<CR>
-
-" NeoComplCache ------------------------------
-
-" most of them not documented because I'm not sure how they work
-" (docs aren't good, had to do a lot of trial and error to make 
-" it play nice)
-let g:neocomplcache_enable_at_startup = 1
-let g:neocomplcache_enable_ignore_case = 1
-let g:neocomplcache_enable_smart_case = 1
-let g:neocomplcache_enable_auto_select = 1
-let g:neocomplcache_enable_fuzzy_completion = 1
+let g:neocomplcache_enable_camel_case_completion = 1
 let g:neocomplcache_enable_camel_case_completion = 1
 let g:neocomplcache_enable_underbar_completion = 1
 let g:neocomplcache_fuzzy_completion_start_length = 1
@@ -453,3 +371,16 @@ let g:choosewin_overlay_enable = 1
 let g:airline_powerline_fonts = 0
 let g:airline_theme = 'bubblegum'
 let g:airline#extensions#whitespace#enabled = 0
+
+" to use fancy symbols for airline, uncomment the following lines and use a
+" patched font (more info on the README.rst)
+"if !exists('g:airline_symbols')
+"   let g:airline_symbols = {}
+"endif
+"let g:airline_left_sep = '⮀'
+"let g:airline_left_alt_sep = '⮁'
+"let g:airline_right_sep = '⮂'
+"let g:airline_right_alt_sep = '⮃'
+"let g:airline_symbols.branch = '⭠'
+"let g:airline_symbols.readonly = '⭤'
+"let g:airline_symbols.linenr = '⭡'
