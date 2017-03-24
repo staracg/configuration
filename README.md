@@ -1,1 +1,1 @@
-# configuration
+# configuration on macOS
